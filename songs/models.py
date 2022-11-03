@@ -37,11 +37,11 @@ class Voice(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Song = models.ForeignKey(Song, on_delete=models.CASCADE, related_name="comments")
+    song = models.ForeignKey(Song, on_delete=models.CASCADE, related_name="comments")
     content= models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now = True)
-
+    
     def __str__(self):
         return str(self.content)
 
